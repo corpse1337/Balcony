@@ -1,6 +1,4 @@
 # Balcony
 Main src of balcony bot.
 
-
-
-skidders will skid it.
+only 60-65% of src.
