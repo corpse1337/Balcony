@@ -199,7 +199,7 @@ class dropdown(discord.ui.View):
 @client.command(aliases=["h"])
 async def help(ctx):
   view = dropdown()
-  bal = discord.Embed(title=f"Help Panel", description=f"<:ReplyHLR:1038822348222103612> Prefix -`.`, `?`, `*`, `>`, `-`\n\n<:ReplyHLR:1038822348222103612> **Catagories**\n<:reply:1038822076372488302> <:SD_black_icons_vip:1038458070692528159> : Moderation\n<:reply:1038822076372488302> <:icons_loading:1038658107166957709> : Utility\n<:reply:1038822076372488302> <:icons_ping:1038657792988422215> : Vanity Roles\n<:reply:1038822076372488302> <:dark_a:1038656702184173568> : Autorole\n<:reply:1038822076372488302> <:icons_list:1038657884470399038> : Logging\n{reply} <:icons_ban:1038658008743432242> : AntiNuke", color=color)
+  bal = discord.Embed(title=f"Help Panel", description=f"<:ReplyHLR:1038822348222103612> Prefix -`.`, `?`, `*`, `;`, `-`\n\n<:ReplyHLR:1038822348222103612> **Catagories**\n<:reply:1038822076372488302> <:SD_black_icons_vip:1038458070692528159> : Moderation\n<:reply:1038822076372488302> <:icons_loading:1038658107166957709> : Utility\n<:reply:1038822076372488302> <:icons_ping:1038657792988422215> : Vanity Roles\n<:reply:1038822076372488302> <:dark_a:1038656702184173568> : Autorole\n<:reply:1038822076372488302> <:icons_list:1038657884470399038> : Logging\n{reply} <:icons_ban:1038658008743432242> : AntiNuke", color=color)
   bal.set_thumbnail(url=ctx.guild.icon.url)
   bal.set_footer(text=f"/{svvanity} | developer - corpse", icon_url=ctx.author.avatar.url)
 
@@ -207,11 +207,6 @@ async def help(ctx):
   r=await ctx.reply(embed=bal, view=view, mention_author=False)
   view.response = r
   
-  
-
-
-
-
   
 
 
@@ -582,14 +577,6 @@ async def create_role(ctx, *, name):
     await guild.create_role(name=name)
     await ctx.send(f'{tick} | SuccessFully Created Role `{name}`')
 
-@client.command(aliases=['roledel'])
-@commands.has_permissions(
-    manage_roles=True)
-async def delete_role(ctx, *, name):
-    omk = discord.utils.get(ctx.guild.roles, id=name.id)
-    guild = ctx.guild
-    await guild.delete_role(omk)
-    await ctx.send(f'{tick} | SuccessFully Deleted Role `{name}`')
 
 @client.command()
 async def serverbanner(ctx):
